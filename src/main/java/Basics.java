@@ -7,6 +7,8 @@
  * relevant readings for each task.
  */
 
+import java.util.Arrays;
+
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
@@ -43,6 +45,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
+        System.out.println("Hello World!");
 
 
 
@@ -62,6 +65,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
+        int my_variable = 100;
 
 
 
@@ -99,7 +103,10 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int i = 0; i < 11; i++){
+            int x = 10 - i;
+            System.out.println("Current Count: " + x);
+        }
 
     }
 
@@ -132,7 +139,7 @@ public class Basics {
      *                   spaces.
      * @return           The first letter of every word in to_split
      */
-    public static String split(String to_split) {
+    public String split(String to_split) {
         /* TODO (Task 4): Complete this method body.
          *                The String methods .split and .charAt may be helpful,
          *                along with the StringBuilder.append
@@ -141,9 +148,11 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        String[] s_array = to_split.split(" ");
+        int len_array = s_array.length;
+        for (int i = 0; i < len_array; i++){
+            ret.append(s_array[i].charAt(0));
+        }
         return ret.toString();
     }
 
@@ -163,6 +172,7 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
+        int arr_len = arr.length;
 
         /* TODO (Task 5): Complete this method body using a for-loop.
          *                You can find the length of an array by using the
@@ -170,6 +180,14 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
+
+        if (arr_len > 1){
+            for (int i = 0; i < arr_len; i++){
+                if (i%2 != 0){
+                    current_sum += arr[i];
+                }
+            }
+        }
 
         return current_sum;
     }
