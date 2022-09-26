@@ -103,9 +103,8 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-        for (int i = 0; i < 11; i++){
-            int x = 10 - i;
-            System.out.println("Current Count: " + x);
+        for (int i = 10; i > -1; i--){
+            System.out.println("Current count: " + i);
         }
 
     }
@@ -139,7 +138,7 @@ public class Basics {
      *                   spaces.
      * @return           The first letter of every word in to_split
      */
-    public String split(String to_split) {
+    public static String split(String to_split) {
         /* TODO (Task 4): Complete this method body.
          *                The String methods .split and .charAt may be helpful,
          *                along with the StringBuilder.append
@@ -153,7 +152,7 @@ public class Basics {
         for (int i = 0; i < len_array; i++){
             ret.append(s_array[i].charAt(0));
         }
-        return ret.toString();
+        return ret.toString() ;
     }
 
     /**
